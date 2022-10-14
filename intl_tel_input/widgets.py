@@ -25,7 +25,7 @@ class IntlTelInputWidget(forms.TextInput):
 
     def __init__(self, attrs=None, allow_dropdown=True,
                  preferred_countries=['us', 'gb'], default_code='us',
-                 auto_geo_ip=False, , only_countries=None):
+                 auto_geo_ip=False, only_countries=None):
         final_attrs = {'size': '2'}
         if attrs is not None:
             final_attrs.update(attrs)
