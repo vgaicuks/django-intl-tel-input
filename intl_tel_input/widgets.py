@@ -25,7 +25,7 @@ class IntlTelInputWidget(forms.TextInput):
 
     def __init__(self, attrs=None, allow_dropdown=True,
                  preferred_countries=['us', 'gb'], default_code='us',
-                 auto_geo_ip=False):
+                 auto_geo_ip=False, , only_countries=None):
         final_attrs = {'size': '2'}
         if attrs is not None:
             final_attrs.update(attrs)
@@ -38,6 +38,11 @@ class IntlTelInputWidget(forms.TextInput):
             'data-default-code': default_code,
             'data-auto-geo-ip': auto_geo_ip,
         }
+
+        if only_countries is not None:
+            self.js_attrs.update({
+                'data-only-countries': json.dumps(only_countries)
+            })
 
         super(IntlTelInputWidget, self).__init__(attrs=final_attrs)
 

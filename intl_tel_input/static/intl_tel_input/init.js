@@ -24,7 +24,8 @@
           });
         }
       },
-      allowDropdown: data.allowDropdown !== undefined ? true : false
+      allowDropdown: data.allowDropdown !== undefined ? true : false,
+      onlyCountries: data.onlyCountries,
     };
 
     options.utilsScript = 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.4.0/js/utils.js';
